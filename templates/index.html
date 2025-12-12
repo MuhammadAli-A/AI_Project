@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Interview Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 AI Interview Analyzer</h1>
+            <p class="subtitle">Real-time Motion Detection & Performance Analysis</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Video Section -->
+            <div class="video-section">
+                <div class="video-container">
+                    <img src="{{ url_for('video_feed') }}" alt="Video Feed" id="videoFeed">
+                    <div class="recording-indicator" id="recordingIndicator">
+                        <span class="pulse"></span> Recording
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="startBtn" class="btn btn-start" onclick="startRecording()">
+                        ▶ Start Interview
+                    </button>
+                    <button id="stopBtn" class="btn btn-stop" onclick="stopRecording()" disabled>
+                        ⏹ Stop Interview
+                    </button>
+                    <button id="reportBtn" class="btn btn-report" onclick="viewReport()" disabled>
+                        📊 View Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="stats-section">
+                <div class="stat-card">
+                    <h3>👁️ Eye Contact</h3>
+                    <div class="stat-value" id="eyeContact">--</div>
+                    <div class="stat-label" id="eyeContactRating">Not Started</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="eyeContactProgress"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>🎭 Emotion</h3>
+                    <div class="stat-value" id="emotion">--</div>
+                    <div class="stat-label">Current State</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>💫 Motion Level</h3>
+                    <div class="stat-value" id="motionLevel">--</div>
+                    <div class="stat-label" id="motionActivity">Not Started</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="motionProgress"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>📍 Face Detection</h3>
+                    <div class="stat-value" id="faceStatus">--</div>
+                    <div class="stat-label">Detection Status</div>
+                </div>
+
+                <div class="stat-card" id="speechCard" style="display: none;">
+                    <h3>🎤 Speech Analysis</h3>
+                    <div class="stat-value" id="speechEmotion">--</div>
+                    <div class="stat-label">Vocal Emotion</div>
+                    <div class="stat-label" style="margin-top: 10px;">Positivity: <span id="speechPositivity">--</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="speechProgress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Report Modal -->
+        <div id="reportModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeReport()">&times;</span>
+                <h2>📊 Interview Performance Report</h2>
+                <div id="reportContent">
+                    <div class="loading">Generating report...</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by OpenCV, MediaPipe, HuggingFace & Wav2Vec2 | Real-time AI Analysis</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
