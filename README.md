@@ -8,6 +8,20 @@ A complete real-time AI-powered interview analysis system with live motion detec
 ![HuggingFace](https://img.shields.io/badge/🤗-HuggingFace-yellow.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+## 📸 Screenshots
+
+### Live Interview Analysis
+![Live Interview](screenshots/live-interview.png)
+*Real-time face detection, emotion recognition, and eye contact monitoring during an interview session*
+
+### Overall Performance Dashboard
+![Overall Performance](screenshots/overall-performance.png)
+*Comprehensive performance metrics including overall score, eye contact, body language, emotion, and engagement scores*
+
+### Detailed Analysis & Recommendations
+![Detailed Analysis](screenshots/detailed-analysis.png)
+*In-depth analysis with face detection rate, eye contact percentage, motion tracking, and personalized recommendations*
+
 ## ✨ Features
 
 ### Real-Time Analysis
