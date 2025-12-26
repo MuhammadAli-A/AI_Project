@@ -1,0 +1,55 @@
+# This file represents a placeholder for the CNN model
+# In a real implementation, this would be a binary HDF5 file containing the trained model weights
+# Since we cannot generate binary files, the EmotionClassifier class will create a new model
+# when this file is not found, which is the expected behavior for initial setup
+
+# The model will be automatically created and saved when the application starts
+# Model architecture: CNN with BatchNormalization and Dropout for emotion classification
+# Input: MFCC features (39 dimensions)
+# Output: 7 emotion classes (angry, disgust, fear, happy, neutral, sad, surprise)
+
+import os
+import numpy as np
+from tensorflow import keras
+from tensorflow.keras import layers
+
+def create_initial_model():
+    """
+    Create and save an initial CNN model for emotion classification.
+    This function is called by the EmotionClassifier when no model file exists.
+    """
+    model = keras.Sequential([
+        layers.Input(shape=(None, 39)),
+        layers.Reshape((-1, 39, 1)),
+        layers.Conv2D(32, (3, 3), activation='relu', padding='same'),
+        layers.BatchNormalization(),
+        layers.MaxPooling2D((2, 2)),
+        layers.Dropout(0.25),
+        layers.Conv2D(64, (3, 3), activation='relu', padding='same'),
+        layers.BatchNormalization(),
+        layers.MaxPooling2D((2, 2)),
+        layers.Dropout(0.25),
+        layers.Conv2D(128, (3, 3), activation='relu', padding='same'),
+        layers.BatchNormalization(),
+        layers.MaxPooling2D((2, 2)),
+        layers.Dropout(0.25),
+        layers.GlobalAveragePooling2D(),
+        layers.Dense(256, activation='relu'),
+        layers.BatchNormalization(),
+        layers.Dropout(0.5),
+        layers.Dense(128, activation='relu'),
+        layers.BatchNormalization(),
+        layers.Dropout(0.5),
+        layers.Dense(7, activation='softmax')
+    ])
+    
+    model.compile(
+        optimizer='adam',
+        loss='categorical_crossentropy',
+        metrics=['accuracy']
+    )
+    
+    return model
+
+# Note: This file serves as documentation for the model structure
+# The actual model creation happens in emotion_model.py

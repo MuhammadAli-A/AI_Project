@@ -1,20 +1,24 @@
-flask==3.0.0
-flask-cors==4.0.0
-opencv-python
-numpy
-mediapipe
-pillow
-imutils
-tensorflow
-keras
+# AI Interview Analyzer - Dependencies
+# Facial Emotion Detection + Speech Emotion Recognition
 
-# Speech Analysis with HuggingFace
-transformers==4.35.2
-torch==2.1.2
-torchaudio==2.1.2
-librosa==0.10.1
-soundfile==0.12.1
-pyaudio==0.2.14
-scipy==1.11.4
-accelerate==0.25.0
-sentencepiece==0.1.99
+# Flask Web Application
+flask>=2.0.0
+flask-cors>=4.0.0
+
+# Core Computer Vision & ML
+opencv-python>=4.8.0
+numpy>=1.24.0
+mediapipe>=0.10.0
+
+# TensorFlow/Keras for local emotion models
+tensorflow>=2.10.0
+
+# Audio Processing
+librosa>=0.10.0
+soundfile>=0.12.0
+scipy>=1.10.0
+sounddevice>=0.4.6
+
+# PyTorch + HuggingFace for Wav2Vec2 Speech Emotion Recognition
+torch
+transformers>=4.30.0
