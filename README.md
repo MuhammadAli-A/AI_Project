@@ -14,15 +14,15 @@ A cutting-edge real-time AI-powered interview analysis system featuring **multim
 ## 📸 Screenshots
 
 ### Live Interview Analysis
-![Live Interview](screenshots/live-interview.png)
+![Live Interview](Screenshots/live-interview.png)
 *Real-time face detection with emotion recognition, eye contact monitoring, and speech emotion analysis running simultaneously*
 
 ### Overall Performance Dashboard
-![Overall Performance](screenshots/overall-performance.png)
+![Overall Performance](Screenshots/overall-performance.png)
 *Comprehensive multimodal performance metrics including facial emotion score, speech emotion score, eye contact, positivity, and overall confidence rating*
 
 ### Detailed Analysis & Recommendations
-![Detailed Analysis](screenshots/detailed-analysis.png)
+![Detailed Analysis](Screenshots/detailed-analysis.png)
 *In-depth session analysis with emotion distribution charts, time-series data, and AI-generated personalized recommendations*
 
 ### Version 2 Interface
