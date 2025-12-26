@@ -25,6 +25,14 @@ A cutting-edge real-time AI-powered interview analysis system featuring **multim
 ![Detailed Analysis](screenshots/detailed-analysis.png)
 *In-depth session analysis with emotion distribution charts, time-series data, and AI-generated personalized recommendations*
 
+### Version 2 Interface
+![Version 2](Screenshots/Version2.png)
+*Updated interface with enhanced UI/UX improvements*
+
+### Version 2 Recording Mode
+![Version 2 Recording](Screenshots/Version2_Recording.png)
+*Recording mode interface for capturing and analyzing interview sessions*
+
 ## ✨ Features
 
 ### 🎥 Real-Time Facial Analysis
